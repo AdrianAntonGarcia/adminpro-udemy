@@ -13,6 +13,7 @@ import { PAGES_ROUTES } from './pages.routes';
 
 import { ChartsModule } from 'ng2-charts';
 import { SharedModule } from '../shared/shared.module';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -23,7 +24,8 @@ import { SharedModule } from '../shared/shared.module';
         Graficas1Component,
         PagesComponent,
         IncrementadorComponent,
-        GraficoDonaComponent
+        GraficoDonaComponent,
+        AccountSettingsComponent
     ],
     imports: [
         SharedModule,
