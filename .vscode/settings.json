@@ -1,3 +1,40 @@
 {
-    "prettier.useTabs": true
+  "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features",
+      "editor.detectIndentation": false
+      },
+  "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features",
+      "editor.detectIndentation": false
+  },
+
+  "bracket-pair-colorizer-2.colors": [
+      "#fafafa",
+      "#9F51B6",
+      "#F7C244",
+      "#F07850",
+      "#9CDD29",
+      "#C497D4"
+  ],
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.enableSmartCommit": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "prettier.tabWidth": 4,
+  "workbench.colorTheme": "Monokai",
+  "javascript.format.enable": false,
+"prettier.useTabs": true,
+"typescript.tsdk": "node_modules\\typescript\\lib"
 }
