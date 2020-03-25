@@ -105,9 +105,14 @@ export class UsuarioService {
         url += '?token=' + this.token;
 
         return this.http.put(url, usuario).map((resp: any) => {
-            // this.usuario = resp.usuario;
-            let usuarioDB: Usuario = resp.usuario;
-            this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+            /**
+             * Solo actualizamos el local storage si estamos modificando
+             * nuestro propio usuario
+             */
+            if (usuario._id === this.usuario._id) {
+                const usuarioDB: Usuario = resp.usuario;
+                this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+            }
             Swal.fire('Usuario actualizado', usuario.nombre, 'success');
             return true;
         });
@@ -122,6 +127,30 @@ export class UsuarioService {
             console.log(resp);
         }).catch(resp => {
             console.log(resp);
+        });
+    }
+
+    cargarUsuarios(desde: number = 0) {
+        const url = URL_SERVICIOS + '/usuario?desde=' + desde;
+        return this.http.get(url);
+    }
+
+    buscarUsuarios(termino: string) {
+        const url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+        return this.http.get(url).map((resp: any) => {
+            return resp.usuarios;
+        });
+    }
+    borrarUsuario(id: string) {
+        let url = URL_SERVICIOS + '/usuario/' + id + '?token=' + this.token;
+        // http://localhost:3000/usuario/5e6d0ec2286a2931f4e42fb6?token=
+        return this.http.delete(url).map((resp: any) => {
+            Swal.fire(
+                '¡Borrado!',
+                'El usuario ha sido borrado.',
+                'success'
+            );
+            return true;
         });
     }
 }
