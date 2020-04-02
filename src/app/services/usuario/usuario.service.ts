@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../../models/usuario.model';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import 'rxjs/add/operator/map';
-import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { Usuario } from '../../../models/usuario.model';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
+import Swal from 'sweetalert2';
+import 'rxjs/add/operator/map';
 @Injectable()
 export class UsuarioService {
 

@@ -15,12 +15,14 @@ export class ImagenPipe implements PipeTransform {
         if (img.indexOf('https') >= 0) {
             return img;
         }
+        console.log(tipo);
         switch (tipo) {
             case 'usuario':
                 url += '/usuarios/' + img;
                 break;
-            case 'medicos':
+            case 'medico':
                 url += '/medicos/' + img;
+                console.log(url);
                 break;
             case 'hospitales':
                 url += '/hospitales/' + img;
