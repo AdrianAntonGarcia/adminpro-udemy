@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
         HeaderComponent,
         NopagefoundComponent,
         SidebarComponent,
+        ModalUploadComponent
 
     ],
     imports: [
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
         BreadcrumbsComponent,
         HeaderComponent,
         NopagefoundComponent,
-        SidebarComponent
+        SidebarComponent,
+        ModalUploadComponent
     ]
 })
 
